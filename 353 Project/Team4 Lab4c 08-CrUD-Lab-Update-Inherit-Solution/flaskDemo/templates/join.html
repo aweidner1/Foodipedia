@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+  
+     
+	  {% for row in recipes %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('assign', RecipeID=row.RecipeID, IngredientsID=row.IngredientsID) }}">{{ row }}</a> <br/>
+              <small class="text-muted">{{ row.FoodName }}</small>
+            </div>
+           
+          </div>
+        </article>
+     {% endfor %}
+	
+{% endblock content %}

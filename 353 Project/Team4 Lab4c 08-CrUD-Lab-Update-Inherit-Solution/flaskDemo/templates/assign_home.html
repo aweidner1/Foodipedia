@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for row in recipes %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ row }}</a>		  
+             	<small class="text-muted">{{ row['IngredientsID'] }} {{ row['RecipeID'] }} {{ row['RecipeManualID'] }}</small>	
+            </div>
+			<!-- Recipe FoodName, CourseType on screen -->
+			<h2><a class="article-title" href="{{ url_for('assign', RecipeID=row.RecipeID, IngredientsID=row.IngredientsID) }}">{{ row.FoodName }}</a></h2>
+           
+          </div>
+        </article>
+     {% endfor %}
+{% endblock content %}
